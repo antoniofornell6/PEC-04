@@ -51,7 +51,9 @@ a {
 
 
 
-
+/* Es posible que añada más adelante un position fixed o algo por el estilo para que,
+una vez se scrollea hacia abajo, el header se acorte y desaparezca, pero cuando hagas scroll hacia arriba, vuelva a aparercer en pequeño para desplegarse.
+Solo se vería desplegado si estás en el inicio inicio de esta web*/
 .Header {
     width: 100%;
     background-color: #ffffff;
@@ -107,7 +109,8 @@ no se si debe ser asi o mejor quitar altura. Mi intención es */
 
     /* En animación, mi intención es que tanto Introduction-h2 como Introduction-3
 salgan de cada extremo con una linea por debajo de estos textos, en movimiento,
-hasta quedarse cerca de la foto */
+hasta quedarse cerca de la foto. Por otro lado, no se si es posible una animacion de una foto más pequeña, junto a otras muchas fotos (de proyectos)
+que van desapareciendo hasta quedarse la que tengo puesta actual */
     .Introduction-h2 {
         display: flex;
         flex-flow: row nowrap;
@@ -152,7 +155,8 @@ hasta quedarse cerca de la foto */
     }
 }
 
-
+/* No termino de conseguir que las fotos de fondo se centren en el bloque... por otro lado, no tengo claro que esto funcione,
+ya que el texto (los titulares .Work-h6) no termina de verse bien por el fondo de imagen */
 .Section-work {
     width: 100%;
 
@@ -163,6 +167,11 @@ hasta quedarse cerca de la foto */
     gap: 20px;
     margin: 20px auto;
     padding: 20px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
 
     .Section-h3 {
 
@@ -180,14 +189,24 @@ hasta quedarse cerca de la foto */
         .Section-li--work {
             background-color: #ffffff;
             width: 100%;
+            border-radius: 1.25rem;
+            min-height: 13.75rem;
 
 
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
-            align-items: center;
+            align-items: stretch;
             gap: 20px;
-            padding: 20px;
+
+            overflow: hidden;
+
+
+            .Work {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
 
             .Work-h6 {
                 font-size: 2vw;
@@ -196,11 +215,43 @@ hasta quedarse cerca de la foto */
 
 
             .Section-work {
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                opacity: 80%;
+
+                gap: 20px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+
+
+                .Work-h6 {
+                    color: #ffffff;
+                    font-size: 5vh;
+                }
+
+
+                .Work-a {
+                    border: solid 2px rgb(60, 87, 60);
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-size: .9375rem;
+                    font-weight: 600;
+
+                }
+            }
+
+            .Section-work-inv {
+                width: 100%;
+                height: 100%;
                 gap: 20px;
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: start;
                 align-items: start;
+                padding: 20px;
 
 
                 .Work-a {
@@ -213,6 +264,51 @@ hasta quedarse cerca de la foto */
                 }
             }
         }
+    }
+
+
+    .work-web {
+        background-image: url(../assets/WEB\ Renault.png);
+
+    }
+
+    .work-ux {
+        background-image: url(../assets/WEB\ Pixar.png);
+    }
+
+    .work-social{
+        background-image: url(../assets/PREMIERE\ VIDEO\ XERON.png);
+    }
+
+        .work-edit{
+        background-image: url(../assets/CATÁLOGO\ BATHROOM\ -\ 2025\ CANADA4.jpg);
+    }
+
+    .Section-li--work {
+        perspective: 1200px;
+    }
+
+
+    .Work {
+        transform: rotateX(0deg);
+        transition: all .5s ease;
+        transform-style: preserve-3d;
+    }
+
+    .Section-li--work:hover .Work {
+        transform: rotateX(180deg);
+    }
+
+    .Section-work-inv {
+        transform: rotateX(180deg);
+        backface-visibility: hidden;
+
+        position: absolute;
+        top: 0;
+    }
+
+    .Section-work {
+        backface-visibility: hidden;
     }
 
 
@@ -243,7 +339,6 @@ hasta quedarse cerca de la foto */
 
         .Service-design {
             background-color: #ffffff;
-            border: solid 2px rgb(60, 87, 60);
             border-radius: 1.25rem;
             width: 100%;
 
@@ -304,9 +399,9 @@ hasta quedarse cerca de la foto */
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     margin: auto;
-    padding: 20px;
+    padding: 1.25rem;
 
 
     .Footer-ul {
@@ -316,12 +411,12 @@ hasta quedarse cerca de la foto */
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: 1.25rem;
 
 
         .Socials-img {
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
             object-fit: contain;
         }
     }
