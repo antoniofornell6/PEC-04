@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    background-color: #fff4ed;
+    font-size: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+p a {
+    color: inherit;
+    text-decoration: none;
+    display: inline;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font: inherit;
+    color: inherit;
+}
+
+
+
+
+/* Es posible que añada más adelante un position fixed o algo por el estilo para que,
+una vez se scrollea hacia abajo, el header se acorte y desaparezca, pero cuando hagas scroll hacia arriba, vuelva a aparercer en pequeño para desplegarse.
+Solo se vería desplegado si estás en el inicio inicio de esta web*/
+
+/* Por otro lado, querría que hubiera una linea por debajo del Header, entre el header y la primera seccion del main..
+la única manera que se me ha ocurrido es añadiendo un border, pero lo recubre todo, eso o añadir un pequeño div/bloque que haga de linea*/
+.Header {
+    width: 100%;
+    background-color: #ffffff;
+    border: solid 2px #ffdbc1;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .Header-h1 {
+        text-transform: uppercase;
+        font-size: 100%;
+        font-weight: 100;
+        letter-spacing: 2px;
+    }
+
+    .Header-nav {
+        .Header-ul {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+}
+
+
+.Introduction{
+    width: 100%;
+
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    padding: 1.25rem 70rem 1.25rem 2.5rem;
+    margin: 50px auto;
+    gap: 10px;
+
+    .Introduction-h4{
+        font-size: 1.5vh;
+        font-weight: 100;
+    }
+
+    .Introduction-h2{
+        font-size: 10vh;
+        line-height: 80px;
+        font-weight: 600;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Footer {
+    width: 70%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    margin: auto;
+    padding: 1.25rem;
+
+
+    .Footer-ul {
+
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.25rem;
+
+
+        .Socials-img {
+            width: 1.5rem;
+            height: 1.5rem;
+            object-fit: contain;
+        }
+    }
+}

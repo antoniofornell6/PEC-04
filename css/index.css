@@ -54,6 +54,9 @@ a {
 /* Es posible que añada más adelante un position fixed o algo por el estilo para que,
 una vez se scrollea hacia abajo, el header se acorte y desaparezca, pero cuando hagas scroll hacia arriba, vuelva a aparercer en pequeño para desplegarse.
 Solo se vería desplegado si estás en el inicio inicio de esta web*/
+
+/* Por otro lado, querría que hubiera una linea por debajo del Header, entre el header y la primera seccion del main..
+la única manera que se me ha ocurrido es añadiendo un border, pero lo recubre todo, eso o añadir un pequeño div/bloque que haga de linea*/
 .Header {
     width: 100%;
     background-color: #ffffff;
@@ -63,7 +66,7 @@ Solo se vería desplegado si estás en el inicio inicio de esta web*/
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 1.25rem;
 
     .Header-h1 {
         text-transform: uppercase;
@@ -78,7 +81,7 @@ Solo se vería desplegado si estás en el inicio inicio de esta web*/
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
-            gap: 30px;
+            gap: 1.875rem;
         }
     }
 }
@@ -147,7 +150,7 @@ que van desapareciendo hasta quedarse la que tengo puesta actual */
     justify-content: start;
     align-items: center;
     padding: 1.25rem 18.75rem 1.25rem 2.5rem;
-    margin: 50px auto;
+    margin: 3.125rem auto;
 
     .Text-p {
         font-size: 3vw;
